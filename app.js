@@ -7,6 +7,7 @@ const checkUserAnswers = event => {
     event.preventDefault()
 
     let score = 0
+    let counter = 0
     const userAnswers = [
         form.inputQuestion1.value,
         form.inputQuestion2.value,
@@ -19,8 +20,6 @@ const checkUserAnswers = event => {
             score += 25
         }
     })
-
-    let counter = 0
 
     const timer = setInterval(() => {
         if (counter === score) {
