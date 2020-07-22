@@ -1,5 +1,5 @@
 const form = document.querySelector('.quiz-form')
-const scoreMessage = document.querySelector('.scoreMessage')
+const scoreMessage = document.querySelector('.score')
 
 const correctAnswers = ['A', 'E', 'A', 'B']
 
@@ -20,7 +20,8 @@ const checkUserAnswers = event => {
         }
     })
 
-    scoreMessage.textContent = `Parabéns você acertou ${score}% do questionário!`
+    scoreMessage.querySelector('p').textContent = `Parabéns você acertou ${score}% do questionário!`
+    scoreMessage.classList.remove('d-none')
 }
 
 form.addEventListener('submit', checkUserAnswers)
