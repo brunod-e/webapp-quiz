@@ -20,8 +20,20 @@ const checkUserAnswers = event => {
         }
     })
 
-    scoreMessage.querySelector('p').textContent = `Parabéns você acertou ${score}% do questionário!`
+    let counter = 0
+
+    const timer = setInterval(() => {
+        if (counter === score) {
+            clearInterval(timer)
+        }
+        
+        scoreMessage.querySelector('p').textContent = `Parabéns você acertou ${counter}% do questionário!`
+        counter++
+        }, 10)
+    
+    scrollTo(0, 0)
     scoreMessage.classList.remove('d-none')
 }
 
 form.addEventListener('submit', checkUserAnswers)
+
