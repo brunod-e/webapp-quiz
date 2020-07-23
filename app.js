@@ -48,7 +48,8 @@ const animateFinalScore = () => {
 
 const checkUserAnswers = event => {
     event.preventDefault()
-    
+    score = 0
+
     const userAnswers = getUserAnswers()
     
     calculateUserScore(userAnswers) 
