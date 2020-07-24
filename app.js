@@ -46,12 +46,20 @@ const animateFinalScore = () => {
         }, 10)
 }
 
+const resetScore = () => {
+    const isScoreZero = score === 0
+
+    if (!isScoreZero) {
+        score = 0
+    }
+}
+
 const checkUserAnswers = event => {
     event.preventDefault()
-    score = 0
-
+    
     const userAnswers = getUserAnswers()
     
+    resetScore()
     calculateUserScore(userAnswers) 
     showFinalScore()
     animateFinalScore()
